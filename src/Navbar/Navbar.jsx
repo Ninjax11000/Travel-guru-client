@@ -15,7 +15,7 @@ const Navbar = () => {
                         <li><a>Item 3</a></li>
                     </ul>
                 </div>
-                <a className=''><img src="../../public/logo1.png" alt="" /></a>
+                <a className=''><img src="/logo1.png" alt="" /></a>
 
 
                 <div className="form-control sm:w-2/3 md:w-1/4 text-white">
