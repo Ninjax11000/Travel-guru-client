@@ -21,10 +21,10 @@ import { Link } from 'react-router-dom';
 const BCarousel = () => {
     const { setText, setUrl } = useContext(imageContext);
 
-    const textCoxs = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima explicabo consectetur corrupti beatae corporis quaerat tenetur sint ipsam sequi nobis!";
-    const textSajek = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima explicabo consectetur corrupti beatae corporis quaerat tenetur sint ipsam sequi nobis!";
-    const textSreemongol = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima explicabo consectetur corrupti beatae corporis quaerat tenetur sint ipsam sequi nobis!";
-    const textSundorbon = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima explicabo consectetur corrupti beatae corporis quaerat tenetur sint ipsam sequi nobis!";
+    const textCoxs = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima explicabo consectetur corrupti beatae corporis quaerat tenetur sint ipsam sequi nobis! Coxsbazar";
+    const textSajek = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima explicabo consectetur corrupti beatae corporis quaerat tenetur sint ipsam sequi nobis!Sajek";
+    const textSreemongol = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima explicabo consectetur corrupti beatae corporis quaerat tenetur sint ipsam sequi nobis!Sreemongol";
+    const textSundorbon = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima explicabo consectetur corrupti beatae corporis quaerat tenetur sint ipsam sequi nobis!Sundorbon";
     
     const handleTextUrl = (text, uRl)=>{
             setText(text);
@@ -34,7 +34,7 @@ const BCarousel = () => {
     
 
     return (
-        <div >
+        <div  >
             <>
                 <Swiper
 
@@ -77,9 +77,8 @@ const BCarousel = () => {
                 
             </>
             
-            <h2>Carousel Comming soon!!!!</h2>
-            {/* <button onClick={handletext} className='btn btn-warning'></button>
-            <button onClick={handleurl} className='btn btn-primary'></button> */}
+            
+            
         </div>
     );
 };
