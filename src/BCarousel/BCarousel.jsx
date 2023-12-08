@@ -1,4 +1,4 @@
-import React, { useContext} from 'react';
+import React, { useContext, useEffect, useState} from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import sajek from '/images/places/Sajek.png';
 import sreemongol from '/images/places/Sreemongol.png';
@@ -20,23 +20,38 @@ import { imageContext } from '../Layout/Main';
 
 
 const BCarousel = () => {
-    const { setText, setUrl,setTitle } = useContext(imageContext);
-   
+    const { setText, setUrl,setTitle,setShow } = useContext(imageContext);
+    const [places,setPlaces]=useState(null);
+   useEffect(()=>{
+    fetch('http://localhost:5000/data')
+    .then(res=>res.json())
+    .then(data=>{
+        console.log(data);
+        setPlaces(data);
+    })
+    .catch(error=> console.log(error.message))
+   },[])
 
-    const textCoxs = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima explicabo consectetur corrupti beatae corporis quaerat tenetur sint ipsam sequi nobis! Coxsbazar";
-    const textSajek = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima explicabo consectetur corrupti beatae corporis quaerat tenetur sint ipsam sequi nobis!Sajek";
-    const textSreemongol = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima explicabo consectetur corrupti beatae corporis quaerat tenetur sint ipsam sequi nobis!Sreemongol";
-    const textSundorbon = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima explicabo consectetur corrupti beatae corporis quaerat tenetur sint ipsam sequi nobis!Sundorbon";
+    // const textCoxs = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima explicabo consectetur corrupti beatae corporis quaerat tenetur sint ipsam sequi nobis! Coxsbazar";
+    // const textSajek = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima explicabo consectetur corrupti beatae corporis quaerat tenetur sint ipsam sequi nobis!Sajek";
+    // const textSreemongol = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima explicabo consectetur corrupti beatae corporis quaerat tenetur sint ipsam sequi nobis!Sreemongol";
+    // const textSundorbon = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima explicabo consectetur corrupti beatae corporis quaerat tenetur sint ipsam sequi nobis!Sundorbon";
     
-    const title1='COX\'S BAZAR';
-    const title2='SAJEK';
-    const title3='SREEMONGOL';
-    const title4='SUNDORBAN';
+    // const title1='COX\'S BAZAR';
+    // const title2='SAJEK';
+    // const title3='SREEMONGOL';
+    // const title4='SUNDORBAN';
     
-    const handleTextUrl = (text, uRl,title)=>{
+    const handleTextUrl = (id,url)=>{
+
+           const text= places[id].placeDetails;
+
             setText(text);
-            setUrl(uRl);
+            setUrl(url);
+
+            const title=places[id].placeTitle;
             setTitle(title);
+            setShow(false);
     }
 
     const breakpoints = {
@@ -48,6 +63,7 @@ const BCarousel = () => {
 
     return (
         <div className='w-full' >
+            
             <>
                 <Swiper
 
@@ -68,22 +84,22 @@ const BCarousel = () => {
                 >
                     <SwiperSlide 
                     style={{backgroundImage:`url(${coxsbazar})`,backgroundSize:'100% 100%',cursor: 'pointer',}} 
-                    onClick={()=>handleTextUrl(textCoxs, coxsbazar,title1)}
+                    onClick={()=>handleTextUrl(0,coxsbazar)}
                     >  
                     </SwiperSlide>
                     <SwiperSlide 
                     style={{backgroundImage:`url(${sajek})`,backgroundSize:'100% 100%',cursor: 'pointer'}}
-                    onClick={()=>handleTextUrl(textSajek, sajek,title2)}
+                    onClick={()=>handleTextUrl(1, sajek)}
                     >   
                     </SwiperSlide>
                     <SwiperSlide 
                     style={{backgroundImage:`url(${sreemongol})`,backgroundSize:'100% 100%',cursor: 'pointer'}} 
-                    onClick={()=>handleTextUrl(textSreemongol, sreemongol,title3)}
+                    onClick={()=>handleTextUrl(2, sreemongol)}
                     >   
                     </SwiperSlide>
                     <SwiperSlide 
                     style={{backgroundImage:`url(${sundorbon})`,backgroundSize:'100% 100%',cursor: 'pointer'}} 
-                    onClick={()=>handleTextUrl(textSundorbon, sundorbon,title4)}
+                    onClick={()=>handleTextUrl(3, sundorbon)}
                     >   
                     </SwiperSlide>
                    

@@ -8,13 +8,18 @@ export const imageContext = createContext('');
 
 
 const Main = () => {
-    const [text, setText] = useState("Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima explicabo consectetur corrupti beatae corporis quaerat tenetur sint ipsam sequi nobis! Coxsbazar");
+    const [text, setText] = useState("Cox's Bazar is a famous tourist destination known for its long sandy beach. It is located in the southeastern part of Bangladesh and is one of the most popular beach resorts in the world. The beach is known for its natural beauty, with a long stretch of golden sand and blue waters. Tourists often enjoy beachcombing, engaging in various water sports, and visiting nearby attractions like Himchari National Park. The best time to visit Cox's Bazar is from November to February when the weather is pleasant. Accommodation options are plentiful, ranging from budget-friendly hotels to luxurious resorts along the beach.");
     const [url, setUrl] = useState(bg1);
+    const [show,setShow]=useState(false);
     const [title, setTitle] = useState('COX\'S BAZAR');
     const setTextImage = {
         setText,
         setUrl,
         setTitle,
+        setShow
+    }
+    const handleShow = ()=>{
+        setShow(true);
     }
     return (
         <div style={
@@ -32,10 +37,10 @@ const Main = () => {
                 <imageContext.Provider value={setTextImage}>
                     <div className='flex flex-row'>
                         <div className='w-2/5 flex items-center justify-center'>
-                            <div className='mx-6 px-6'>
+                            <div className='mx-6 px-6 my-3'>
                                 <h2 className='font-bold text-5xl text-white'>{title}</h2>
-                                <p className='text-white text-left my-5'>{text}</p>
-                                <button className='btn btn-warning'>Booking  <FaArrowRight /> </button>
+                                <p className='text-white text-left my-5'>{show? text: `${text.slice(0,100)}...`}</p>
+                                <button onClick={handleShow} className='btn btn-warning'>Booking  <FaArrowRight /> </button>
                                
                             </div>
                         </div>
