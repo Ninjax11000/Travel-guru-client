@@ -28,7 +28,7 @@ const BCarousel = () => {
     const textSreemongol = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima explicabo consectetur corrupti beatae corporis quaerat tenetur sint ipsam sequi nobis!Sreemongol";
     const textSundorbon = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima explicabo consectetur corrupti beatae corporis quaerat tenetur sint ipsam sequi nobis!Sundorbon";
     
-    const title1='COXS BAZAR';
+    const title1='COX\'S BAZAR';
     const title2='SAJEK';
     const title3='SREEMONGOL';
     const title4='SUNDORBAN';
@@ -67,7 +67,7 @@ const BCarousel = () => {
                     
                 >
                     <SwiperSlide 
-                    style={{backgroundImage:`url(${coxsbazar})`,backgroundSize:'100% 100%',cursor: 'pointer'}} 
+                    style={{backgroundImage:`url(${coxsbazar})`,backgroundSize:'100% 100%',cursor: 'pointer',}} 
                     onClick={()=>handleTextUrl(textCoxs, coxsbazar,title1)}
                     >  
                     </SwiperSlide>

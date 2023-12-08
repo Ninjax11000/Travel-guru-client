@@ -2,6 +2,7 @@ import React, { createContext, useState } from 'react';
 import Navbar from '../Navbar/Navbar';
 import { Outlet } from 'react-router-dom';
 import bg1 from '/images/places/coxsbazar.png';
+import { FaArrowRight } from "react-icons/fa";
 
 export const imageContext = createContext('');
 
@@ -9,7 +10,7 @@ export const imageContext = createContext('');
 const Main = () => {
     const [text, setText] = useState("Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima explicabo consectetur corrupti beatae corporis quaerat tenetur sint ipsam sequi nobis! Coxsbazar");
     const [url, setUrl] = useState(bg1);
-    const [title, setTitle] = useState('COXSBAZAR');
+    const [title, setTitle] = useState('COX\'S BAZAR');
     const setTextImage = {
         setText,
         setUrl,
@@ -31,10 +32,11 @@ const Main = () => {
                 <imageContext.Provider value={setTextImage}>
                     <div className='flex flex-row'>
                         <div className='w-2/5 flex items-center justify-center'>
-                            <div className='mx-6'>
-                                <h2 className='font-bold text-3xl text-white'>{title}</h2>
-                                <p className='text-white text-left'>{text}</p>
-                                <button className='btn btn-warning'>Booking</button>
+                            <div className='mx-6 px-6'>
+                                <h2 className='font-bold text-5xl text-white'>{title}</h2>
+                                <p className='text-white text-left my-5'>{text}</p>
+                                <button className='btn btn-warning'>Booking  <FaArrowRight /> </button>
+                               
                             </div>
                         </div>
                         <div className='h-full w-3/5'>

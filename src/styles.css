@@ -48,5 +48,8 @@
     margin: 20px auto;
     
   }
+  .swiper-slide:hover {
+    border: 3px solid rgb(255, 213, 0); /* Add your desired border style here */
+  }
   
   
