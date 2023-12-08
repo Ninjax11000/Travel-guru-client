@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../Layout/Main";
 import BCarousel from "../BCarousel/BCarousel";
+import StartBooking from "../StartBooking/StartBooking";
 
 const router = createBrowserRouter([
     {
@@ -10,6 +11,10 @@ const router = createBrowserRouter([
         {
             path:'/',
             element:<BCarousel></BCarousel>
+        },
+        {
+          path:'/booknow',
+          element:<StartBooking></StartBooking>
         }
       ]
     },

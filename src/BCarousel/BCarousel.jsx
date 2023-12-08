@@ -32,15 +32,7 @@ const BCarousel = () => {
     .catch(error=> console.log(error.message))
    },[])
 
-    // const textCoxs = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima explicabo consectetur corrupti beatae corporis quaerat tenetur sint ipsam sequi nobis! Coxsbazar";
-    // const textSajek = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima explicabo consectetur corrupti beatae corporis quaerat tenetur sint ipsam sequi nobis!Sajek";
-    // const textSreemongol = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima explicabo consectetur corrupti beatae corporis quaerat tenetur sint ipsam sequi nobis!Sreemongol";
-    // const textSundorbon = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima explicabo consectetur corrupti beatae corporis quaerat tenetur sint ipsam sequi nobis!Sundorbon";
-    
-    // const title1='COX\'S BAZAR';
-    // const title2='SAJEK';
-    // const title3='SREEMONGOL';
-    // const title4='SUNDORBAN';
+   
     
     const handleTextUrl = (id,url)=>{
 
@@ -85,22 +77,25 @@ const BCarousel = () => {
                     <SwiperSlide 
                     style={{backgroundImage:`url(${coxsbazar})`,backgroundSize:'100% 100%',cursor: 'pointer',}} 
                     onClick={()=>handleTextUrl(0,coxsbazar)}
-                    >  
+                    >  <h2 className='font-bold text-white mt-auto mb-3 mr-auto ml-3 text-2xl'>Cox's Bazar</h2>
                     </SwiperSlide>
                     <SwiperSlide 
                     style={{backgroundImage:`url(${sajek})`,backgroundSize:'100% 100%',cursor: 'pointer'}}
                     onClick={()=>handleTextUrl(1, sajek)}
-                    >   
+                    >  
+                    <h2 className='font-bold text-white mt-auto mb-3 mr-auto ml-3 text-2xl'>Sajek</h2> 
                     </SwiperSlide>
                     <SwiperSlide 
                     style={{backgroundImage:`url(${sreemongol})`,backgroundSize:'100% 100%',cursor: 'pointer'}} 
                     onClick={()=>handleTextUrl(2, sreemongol)}
                     >   
+                    <h2 className='font-bold text-white mt-auto mb-3 mr-auto ml-3 text-2xl'>Sreemongol</h2>
                     </SwiperSlide>
                     <SwiperSlide 
                     style={{backgroundImage:`url(${sundorbon})`,backgroundSize:'100% 100%',cursor: 'pointer'}} 
                     onClick={()=>handleTextUrl(3, sundorbon)}
-                    >   
+                    > 
+                    <h2 className='font-bold text-white mt-auto mb-3 mr-auto ml-3 text-2xl'>Sundorbon</h2>  
                     </SwiperSlide>
                    
                     

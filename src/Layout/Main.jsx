@@ -1,8 +1,9 @@
 import React, { createContext, useState } from 'react';
 import Navbar from '../Navbar/Navbar';
-import { Outlet } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import bg1 from '/images/places/coxsbazar.png';
 import { FaArrowRight } from "react-icons/fa";
+
 
 export const imageContext = createContext('');
 
@@ -13,14 +14,17 @@ const Main = () => {
     const [show,setShow]=useState(false);
     const [title, setTitle] = useState('COX\'S BAZAR');
     const setTextImage = {
+        title,
+        show,
         setText,
         setUrl,
         setTitle,
         setShow
     }
     const handleShow = ()=>{
-        setShow(true);
+        setShow(!show);
     }
+   
     return (
         <div style={
             {
@@ -35,12 +39,12 @@ const Main = () => {
                 <Navbar></Navbar>
 
                 <imageContext.Provider value={setTextImage}>
-                    <div className='flex flex-row'>
+                    <div className='md:flex flex-row'>
                         <div className='w-2/5 flex items-center justify-center'>
                             <div className='mx-6 px-6 my-3'>
                                 <h2 className='font-bold text-5xl text-white'>{title}</h2>
                                 <p className='text-white text-left my-5'>{show? text: `${text.slice(0,100)}...`}</p>
-                                <button onClick={handleShow} className='btn btn-warning'>Booking  <FaArrowRight /> </button>
+                               <Link to='/booknow'> <button onClick={handleShow} className={show? 'hidden':'btn btn-warning'}>Booking  <FaArrowRight /> </button></Link>
                                
                             </div>
                         </div>
