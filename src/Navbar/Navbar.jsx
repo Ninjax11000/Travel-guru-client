@@ -1,9 +1,12 @@
 import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
+    const location = useLocation();
+    console.log(location.pathname);
     return (
         <div >
-            <div className=" navbar justify-around  pt-9">
+            <div className={(location.pathname == '/login'||location.pathname == '/login/register') ? "navbar justify-around pt-9 bg-white text-black" : " navbar justify-around text-white  pt-9"}>
 
                 <div className="dropdown md:hidden">
                     <div tabIndex={0} role="button" className="btn btn-ghost ">
@@ -15,11 +18,14 @@ const Navbar = () => {
                         <li><a>Item 3</a></li>
                     </ul>
                 </div>
-                <a className=''><img src="/logo1.png" alt="" /></a>
+                <Link to='/' className=''><img className='w-[100px]' src={(location.pathname == '/login'||location.pathname == '/login/register')? "/logo.png": 'logo1.png'} alt="" /></Link>
 
 
                 <div className="form-control sm:w-2/3 md:w-1/4 text-white">
-                    <div className='flex relative w-full'>
+                    {(location.pathname == '/login'||location.pathname == '/login/register')?
+                       <></>
+                        :
+                        <div className='flex relative w-full'>
                         <input type="text" placeholder="Search for your destination" className="input input-bordered border-white bg-transparent w-full  pr-10 placeholder:text-white focus:border-white" />
                         <button className="btn btn-ghost btn-circle absolute right-0 top-0 h-full">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -27,22 +33,23 @@ const Navbar = () => {
                             </svg>
                         </button>
                     </div>
+                    }
                 </div>
                 <div className=" md:block hidden">
-                    <a className="btn btn-ghost text-white">News</a>
+                    <a className="btn btn-ghost ">News</a>
                 </div>
                 <div className="md:block hidden">
-                    <a className="btn btn-ghost text-white">Destination</a>
-                   
+                    <a className="btn btn-ghost ">Destination</a>
+
                 </div>
                 <div className="md:block hidden">
-                    <a className="btn btn-ghost text-white">Blog</a>
+                    <a className="btn btn-ghost">Blog</a>
                 </div>
                 <div className="md:block hidden">
-                    <a className="btn btn-ghost text-white">Contact</a>
+                    <a className="btn btn-ghost ">Contact</a>
                 </div>
                 <div className="md:block hidden">
-                    <a className="btn btn-warning ">Login</a>
+                    <Link to='/login' className="btn btn-warning ">Login</Link>
                 </div>
             </div>
         </div>

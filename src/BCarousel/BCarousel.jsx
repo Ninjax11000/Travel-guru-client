@@ -28,6 +28,7 @@ const BCarousel = () => {
     .then(data=>{
         console.log(data);
         setPlaces(data);
+        setShow(false);
     })
     .catch(error=> console.log(error.message))
    },[])
@@ -43,7 +44,7 @@ const BCarousel = () => {
 
             const title=places[id].placeTitle;
             setTitle(title);
-            setShow(false);
+           
     }
 
     const breakpoints = {
