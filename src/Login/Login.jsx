@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Login = () => {
     return (
-        <div >
+        <div className='bg-white pb-5' >
 
             <div className="hero mt-3 bg-white">
                 <div className="hero-content md:w-1/2 sm:w-3/4 ">
@@ -30,6 +30,15 @@ const Login = () => {
                             <p className='text-center my-3'>Don't have an account? <Link to='/login/register' className='text-warning underline'>Create an account</Link></p>
                         </form>
                     </div>
+                </div>
+            </div>
+            <div className="divider divider-neutral w-1/3 mx-auto">OR</div>
+            <div className='flex flex-col items-center'>
+                <div className='border border-slate-400 rounded-[30px] flex items-center   sm:w-3/4 md:w-1/3 my-3 px-2'>
+                    <img className='w-[50px] py-2 px-2' src="/images/icons/fb.png" alt="" /> <p>Continue with Facebook</p>
+                </div>
+                <div className='border border-slate-400 rounded-[30px] flex items-center  sm:w-3/4 md:w-1/3  my-3 px-2'>
+                    <img className='w-[50px] py-2 px-2' src="/images/icons/google.png" alt="" /> <p>Continue with Google</p>
                 </div>
             </div>
         </div>
