@@ -1,7 +1,28 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../providers/AuthProviders';
 
 const Login = () => {
+    const {signIn}=useContext(AuthContext);
+    const navigate=useNavigate();
+    const handleSignIn=(event)=>{
+        event.preventDefault();
+        const form=event.target;
+        const email= form.email.value;
+        const password=form.password.value;
+        console.log(email,password);
+        signIn(email,password)
+        .then(result=>{
+            console.log(result.user);
+            form.reset();
+            alert('Login Successfull');
+            navigate('/');
+            
+        })
+        .catch(error=>{
+            console.log(error.message);
+        })
+    }
     return (
         <div className='bg-white pb-5' >
 
@@ -10,15 +31,15 @@ const Login = () => {
 
                     <div className="card shrink-0 w-full border border-gray-700 rounded-md  bg-white">
 
-                        <form className="card-body text-black">
+                        <form onSubmit={handleSignIn} className="card-body text-black">
                             <h3 className="text-2xl font-bold">Login</h3>
                             <div className="form-control border-b border-slate-400">
 
-                                <input type="email" placeholder="Your email" className="input text-sm focus:outline-none border-none bg-transparent text-gray-800 placeholder-black " required />
+                                <input type="email" name='email' placeholder="Your email" className="input text-sm focus:outline-none border-none bg-transparent text-gray-800 placeholder-black " required />
                             </div>
                             <div className="form-control border-b border-slate-400">
 
-                                <input type="text" placeholder="Your Password" className="input text-sm focus:outline-none border-none bg-transparent text-gray-800 placeholder-black " required />
+                                <input type="text" name='password' placeholder="Your Password" className="input text-sm focus:outline-none border-none bg-transparent text-gray-800 placeholder-black " required />
                             </div>
                             <label className="label">
                                 <a href="#" className="label-text-alt link link-hover text-warning underline">Forgot password?</a>

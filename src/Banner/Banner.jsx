@@ -2,14 +2,15 @@ import React, { useContext } from 'react';
 import BCarousel from '../BCarousel/BCarousel';
 import { Link } from 'react-router-dom';
 import { FaArrowRight } from "react-icons/fa";
-import { imageContext } from '../Layout/Main';
+import { imageContext } from '../providers/ImageProvider';
+
 
 const Banner = () => {
    const {text, title} =useContext(imageContext);
 
    
     return (
-        <div className='md:flex flex-row '>
+        <div className='md:flex flex-row mt-6'>
             <div className='md:w-2/5 flex items-center justify-center'>
                 <div className='mx-6 px-6 my-3'>
                     <h2 className='font-bold text-5xl text-white'>{title}</h2>

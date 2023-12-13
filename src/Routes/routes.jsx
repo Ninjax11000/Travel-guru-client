@@ -6,6 +6,8 @@ import Login from "../Login/Login";
 import LoginLayout from "../Layout/LoginLayout";
 import Register from "../Register/Register";
 import Banner from "../Banner/Banner";
+import Hotels from "../Hotels/Hotels";
+import PrivateRoute from "./privateroute";
 
 const router = createBrowserRouter([
     {
@@ -20,6 +22,10 @@ const router = createBrowserRouter([
           path:'/booknow',
           element:<StartBooking></StartBooking>
         },
+        {
+          path:'/hotels',
+          element:<PrivateRoute><Hotels></Hotels></PrivateRoute>
+        }
        
       ]
     },

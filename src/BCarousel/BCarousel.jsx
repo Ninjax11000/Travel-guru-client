@@ -13,8 +13,9 @@ import 'swiper/css/navigation';
 
 import '../styles.css';
 import { Pagination, Navigation } from 'swiper/modules';
+import { imageContext } from '../providers/ImageProvider';
 
-import { imageContext } from '../Layout/Main';
+
 
 
 
