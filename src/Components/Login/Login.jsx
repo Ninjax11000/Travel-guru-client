@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { AuthContext } from '../providers/AuthProviders';
+import { AuthContext } from '../../providers/AuthProviders';
 
 const Login = () => {
     const {signIn}=useContext(AuthContext);
@@ -39,7 +39,7 @@ const Login = () => {
                             </div>
                             <div className="form-control border-b border-slate-400">
 
-                                <input type="text" name='password' placeholder="Your Password" className="input text-sm focus:outline-none border-none bg-transparent text-gray-800 placeholder-black " required />
+                                <input type="password" name='password' placeholder="Your Password" className="input text-sm focus:outline-none border-none bg-transparent text-gray-800 placeholder-black " required />
                             </div>
                             <label className="label">
                                 <a href="#" className="label-text-alt link link-hover text-warning underline">Forgot password?</a>

@@ -11,9 +11,9 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
 
-import '../styles.css';
+import './styles.css';
 import { Pagination, Navigation } from 'swiper/modules';
-import { imageContext } from '../providers/ImageProvider';
+import { imageContext } from '../../providers/ImageProvider';
 
 
 
@@ -21,7 +21,7 @@ import { imageContext } from '../providers/ImageProvider';
 
 
 const BCarousel = () => {
-    const { setText, setUrl,setTitle,setShow } = useContext(imageContext);
+    const { setText, setUrl,setTitle,setPlaceId } = useContext(imageContext);
     const [places,setPlaces]=useState(null);
    useEffect(()=>{
     fetch('http://localhost:5000/data')
@@ -29,7 +29,7 @@ const BCarousel = () => {
     .then(data=>{
         console.log(data);
         setPlaces(data);
-        setShow(false);
+        
     })
     .catch(error=> console.log(error.message))
    },[])
@@ -42,7 +42,7 @@ const BCarousel = () => {
 
             setText(text);
             setUrl(url);
-
+            setPlaceId(id+1);
             const title=places[id].placeTitle;
             setTitle(title);
            

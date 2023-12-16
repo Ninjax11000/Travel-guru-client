@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import BCarousel from '../BCarousel/BCarousel';
 import { Link } from 'react-router-dom';
 import { FaArrowRight } from "react-icons/fa";
-import { imageContext } from '../providers/ImageProvider';
+import { imageContext } from '../../providers/ImageProvider';
 
 
 const Banner = () => {

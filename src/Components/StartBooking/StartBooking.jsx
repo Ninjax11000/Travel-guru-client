@@ -2,10 +2,11 @@ import React, { useEffect } from 'react';
 import { useContext } from 'react';
 
 import { Link, useNavigate } from 'react-router-dom';
-import { imageContext } from '../providers/ImageProvider';
+import { imageContext } from '../../providers/ImageProvider';
+
 
 const StartBooking = () => {
-    const { title,text } = useContext(imageContext);
+    const { title,text ,placeId} = useContext(imageContext);
     const navigate=useNavigate();
     const handleBooking = (event) => {
         event.preventDefault();
@@ -15,7 +16,7 @@ const StartBooking = () => {
         const startDate = form.startdate.value;
         const endDate = form.enddate.value;
         console.log(origin, destination, startDate, endDate);
-        navigate('/hotels')
+       
     }
     return (
 
@@ -64,7 +65,7 @@ const StartBooking = () => {
 
                                     </div>
                                 </div>
-                                <button className='btn btn-warning'>Start Booking</button>
+                               <Link to={`/hotels/${placeId}`} className='btn btn-warning'> <button >Start Booking</button></Link>
                                 <Link to='/' className='link link-primary'>More Places</Link>
                             </form>
                         </div>

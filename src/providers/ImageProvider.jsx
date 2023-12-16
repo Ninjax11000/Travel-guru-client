@@ -8,9 +8,11 @@ const ImageProvider = ({children}) => {
     const [url, setUrl] = useState(bg1);
 
     const [title, setTitle] = useState('Cox\'s Bazar');
+    const [placeId,setPlaceId]=useState(1);
     const setTextImage = {
         title,
-
+        placeId,
+        setPlaceId,
         url,
         text,
         setText,

@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState } from 'react';
-import Navbar from '../Navbar/Navbar';
+import Navbar from '../Components/Navbar/Navbar';
 import { Link, Outlet } from 'react-router-dom';
 import bg1 from '/images/places/coxsbazar.png';
 import ImageProvider, { imageContext } from '../providers/ImageProvider';

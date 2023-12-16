@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { AuthContext } from '../providers/AuthProviders';
+import { AuthContext } from '../../providers/AuthProviders';
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
@@ -15,7 +15,7 @@ const Navbar = () => {
     console.log(location.pathname);
     return (
         <div >
-            <div className={(location.pathname == '/login' || location.pathname == '/login/register') ? "navbar justify-around pt-9 bg-white text-black" : " navbar justify-around text-white  pt-9"}>
+            <div className={(location.pathname == '/' || location.pathname == '/booknow') ? " navbar justify-around text-white  pt-9" : "navbar justify-around pt-9 bg-white text-black"}>
 
                 <div className="dropdown md:hidden">
                     <div tabIndex={0} role="button" className="btn btn-ghost ">
@@ -27,13 +27,12 @@ const Navbar = () => {
                         <li><a>Item 3</a></li>
                     </ul>
                 </div>
-                <Link to='/' className=''><img className='w-[100px]' src={(location.pathname == '/login' || location.pathname == '/login/register') ? "/logo.png" : 'logo1.png'} alt="" /></Link>
+                <Link to='/' className=''><img className='w-[100px]' src={(location.pathname == '/' || location.pathname == '/booknow') ? "/logo1.png" : '/logo.png'} alt="" /></Link>
 
 
-                <div className="form-control sm:w-2/3 md:w-1/4 text-white">
-                    {(location.pathname == '/login' || location.pathname == '/login/register') ?
-                        <></>
-                        :
+
+                {(location.pathname == '/' || location.pathname == '/booknow') ?
+                    <div className="form-control sm:w-2/3 md:w-1/4 text-white">
                         <div className='flex relative w-full'>
                             <input type="text" placeholder="Search for your destination" className="input input-bordered border-white bg-transparent w-full  pr-10 placeholder:text-white focus:border-white" />
                             <button className="btn btn-ghost btn-circle absolute right-0 top-0 h-full">
@@ -42,8 +41,11 @@ const Navbar = () => {
                                 </svg>
                             </button>
                         </div>
-                    }
-                </div>
+                    </div>
+                    :
+                    <></>
+                }
+
                 <div className=" md:block hidden">
                     <a className="btn btn-ghost ">News</a>
                 </div>

@@ -1,12 +1,12 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../Layout/Main";
-import BCarousel from "../BCarousel/BCarousel";
-import StartBooking from "../StartBooking/StartBooking";
-import Login from "../Login/Login";
+
+import StartBooking from "../Components/StartBooking/StartBooking";
+import Login from "../Components/Login/Login";
 import LoginLayout from "../Layout/LoginLayout";
-import Register from "../Register/Register";
-import Banner from "../Banner/Banner";
-import Hotels from "../Hotels/Hotels";
+import Register from "../Components/Register/Register";
+import Banner from "../Components/Banner/Banner";
+import Hotels from "../Components/Hotels/Hotels";
 import PrivateRoute from "./privateroute";
 
 const router = createBrowserRouter([
@@ -23,8 +23,9 @@ const router = createBrowserRouter([
           element:<StartBooking></StartBooking>
         },
         {
-          path:'/hotels',
-          element:<PrivateRoute><Hotels></Hotels></PrivateRoute>
+          path:'/hotels/:id',
+          element:<PrivateRoute><Hotels></Hotels></PrivateRoute>,
+          loader:({params})=>fetch(`http://localhost:5000/hotels/${params.id}`)
         }
        
       ]
