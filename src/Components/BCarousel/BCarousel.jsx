@@ -24,7 +24,7 @@ const BCarousel = () => {
     const { setText, setUrl,setTitle,setPlaceId } = useContext(imageContext);
     const [places,setPlaces]=useState(null);
    useEffect(()=>{
-    fetch('http://localhost:5000/data')
+    fetch('https://travel-guru-server-mjby2cmqo-ninjax11000.vercel.app/data')
     .then(res=>res.json())
     .then(data=>{
         console.log(data);

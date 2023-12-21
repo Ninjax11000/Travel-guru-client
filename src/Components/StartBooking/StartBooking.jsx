@@ -21,8 +21,8 @@ const StartBooking = () => {
     return (
 
         <div className='md:flex flex-row'>
-            <div className='w-2/5 flex items-center justify-center'>
-                <div className='mx-6 px-6 my-3'>
+            <div className='md:w-2/5 flex items-center justify-center'>
+                <div className='mx-6 px-6  my-3'>
                     <h2 className='font-bold text-5xl text-white'>{title}</h2>
                     <p className='text-white text-left my-5'>{text}
                     </p>

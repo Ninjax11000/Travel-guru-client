@@ -10,7 +10,8 @@ const Hotels = () => {
         <div className='bg-white '>
             <div className="divider my-0 py-0 px-10 divider-neutral"></div>
 
-           <div className='container mx-auto  px-4'>
+           <div className='md:flex'>
+           <div className='container md:mx-10   md:w-1/2 sm:w-full'>
            <h2 className='text-2xl text-black font-bold my-3'>Stay in {title}</h2>
             {
                 hotels.map(hotel=>
@@ -20,6 +21,10 @@ const Hotels = () => {
                     ></HotelCard>
                 )
             }
+           </div>
+           <div>
+            <h3 className="text-warning text-4xl text-center"> maps coming soon!!</h3>
+           </div>
            </div>
 
         </div>

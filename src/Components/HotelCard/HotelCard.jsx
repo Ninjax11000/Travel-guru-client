@@ -4,7 +4,7 @@ import { FaStar } from "react-icons/fa";
 const HotelCard = ({ hotel }) => {
     const { name, beds, guests, rating, pricePerNight } = hotel;
     return (
-        <div className='md:w-1/2 sm:w-full my-3 py-3'>
+        <div className='w-full px-3 my-3 py-3'>
 
             <div className="card md:card-side bg-slate-100 shadow-xl">
                 <figure className='w-full md:w-[400px]'><img className='h-full' src="/images/places/hotel.jpg" alt="Album" /></figure>
