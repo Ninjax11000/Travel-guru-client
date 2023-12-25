@@ -25,7 +25,7 @@ const router = createBrowserRouter([
         {
           path:'/hotels/:id',
           element:<PrivateRoute><Hotels></Hotels></PrivateRoute>,
-          loader:({params})=>fetch(`https://travel-guru-server-mjby2cmqo-ninjax11000.vercel.app/hotels/${params.id}`)
+          loader:({params})=>fetch(`https://travel-guru-server-nine-psi.vercel.app/hotels/${params.id}`)
         }
        
       ]
