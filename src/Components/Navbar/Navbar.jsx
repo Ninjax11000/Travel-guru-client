@@ -29,9 +29,17 @@ const Navbar = () => {
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                     </div>
                     <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                        <li><a>Item 1</a></li>
+                        <li><a>News</a></li>
 
-                        <li><a>Item 3</a></li>
+                        <li><a>Destination</a></li>
+                        <li><a>Blog</a></li>
+                        <li><a>Contact</a></li>
+                        {
+                            user?
+                            <li><button onClick={handleLogout} className="btn btn-warning ">Logout</button></li>
+                            :
+                            <li> <Link to='/login' className="btn btn-warning ">Login</Link></li>
+                        }
                     </ul>
                 </div>
                 <Link to='/' className=''><img className='w-[100px]' src={(location.pathname == '/' || location.pathname == '/booknow') ? "/logo1.png" : '/logo.png'} alt="" /></Link>
